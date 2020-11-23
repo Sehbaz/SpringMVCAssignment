@@ -1,4 +1,4 @@
-/*
+
 package ImageHoster.controller;
 
 import ImageHoster.model.Image;
@@ -15,6 +15,7 @@ import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.mock.web.MockHttpSession;
 import org.springframework.mock.web.MockMultipartFile;
+import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 
@@ -210,14 +211,14 @@ public class ImageControllerTest {
 
         User user1 = new User();
         UserProfile userProfile1 = new UserProfile();
-        userProfile.setId(2);
-        userProfile.setEmailAddress("p@gmail.com");
-        userProfile.setFullName("Prerna");
-        userProfile.setMobileNumber("9876543210");
-        user.setProfile(userProfile1);
-        user.setId(2);
-        user.setUsername("Prerna");
-        user.setPassword("password1@@");
+        userProfile1.setId(2);
+        userProfile1.setEmailAddress("p@gmail.com");
+        userProfile1.setFullName("Prerna");
+        userProfile1.setMobileNumber("9876543210");
+        user1.setProfile(userProfile1);
+        user1.setId(2);
+        user1.setUsername("Prerna");
+        user1.setPassword("password1@@");
 
         Image image = new Image();
         image.setId(1);
@@ -289,10 +290,10 @@ public class ImageControllerTest {
         userProfile.setEmailAddress("p@gmail.com");
         userProfile.setFullName("Prerna");
         userProfile.setMobileNumber("9876543210");
-        user.setProfile(userProfile1);
-        user.setId(2);
-        user.setUsername("Prerna");
-        user.setPassword("password1@@");
+        user1.setProfile(userProfile1);
+        user1.setId(2);
+        user1.setUsername("Prerna");
+        user1.setPassword("password1@@");
 
         Image image = new Image();
         image.setId(1);
@@ -310,4 +311,4 @@ public class ImageControllerTest {
     }
 }
 
-*/
+
