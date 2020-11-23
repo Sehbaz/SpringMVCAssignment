@@ -1,12 +1,30 @@
 package ImageHoster.model;
 
+import javax.persistence.*;
+
 import java.util.Date;
 
+@Entity
+@Table(name = "comments")
 public class Comment {
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name="id")
 	private Integer id;
+
+	@Column(name = "text", columnDefinition = "TEXT")
 	private String text;
+
+	@Column(name = "createdDate")
 	private Date createdDate;
+
+	@ManyToOne(fetch = FetchType.EAGER)
+	@JoinColumn(name = "users_id")
 	private User user;
+
+	@ManyToOne(fetch = FetchType.EAGER)
+	@JoinColumn(name = "images_id")
 	private Image Image;
 
 	public Integer getId() {
