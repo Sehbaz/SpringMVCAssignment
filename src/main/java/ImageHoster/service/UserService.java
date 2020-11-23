@@ -4,6 +4,7 @@ import ImageHoster.model.User;
 import ImageHoster.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import java.util.regex.Pattern;
 
 @Service
 public class UserService {
@@ -31,5 +32,12 @@ public class UserService {
             return null;
         }
     }
+    public static final String PASSWORD_REGEX = "((?=.*\\d)(?=.*[A-Za-z])(?=.*[@#$%]).{3,20})";
+
+    //This method returns true if the regex matches else returns false
+    public boolean validatePassword(String password){
+        return (Pattern.compile(PASSWORD_REGEX)).matcher(password).matches();
+    }
+
 
 }
